@@ -207,17 +207,6 @@ El servidor se iniciará en `http://localhost:5000`
 ```
 **Resultado esperado:** Error 400 - "Se requieren campos 'usuario' y 'contraseña'"
 
-## 🔧 Configuración para Desarrollo
-
-### Variables de Entorno (Opcional)
-Puedes crear un archivo `.env` para configuraciones:
-
-```env
-FLASK_ENV=development
-FLASK_DEBUG=True
-SECRET_KEY=tu_clave_secreta_super_segura_123
-DATABASE_URL=tareas.db
-```
 
 ### Modo Debug
 El servidor ya está configurado para ejecutarse en modo debug por defecto, lo que permite:
@@ -293,11 +282,11 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-Desarrollado PFO2 de la materia Programación sobre redes.
+Práctica Formativa Obligatoria 2 (PFO2) desarrollada por Christian javier Lemos para la materia Programación sobre redes.
 
 ---
 
-## 📱 Capturas de Pantalla en la carpeta screenshots
+## 📱 Capturas de Pantalla de la carpeta screenshots
 
 ### Postman - Prueba a servidor
 ![Servidor](screenshots/01.%20servidor_ok.PNG)
