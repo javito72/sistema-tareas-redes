@@ -1,0 +1,24 @@
+# requirements.txt
+# Dependencias del proyecto Sistema de Gestión de Tareas
+
+# Framework web principal
+Flask==2.3.3
+
+# Manejo de base de datos (viene incluido con Python)
+# sqlite3 (incluido en Python estándar)
+
+# Herramientas de seguridad para hasheo de contraseñas
+bcrypt==4.0.1
+
+# Utilidades de Werkzeug (incluida con Flask)
+Werkzeug==2.3.7
+
+# Para manejo de fechas y tiempo (incluido en Python)
+# datetime (incluido en Python estándar)
+
+# Para manejo de datos estructurados (incluido en Python)
+# dataclasses (incluido en Python 3.7+)
+
+# Para testing (opcional)
+pytest==7.4.2
+pytest-flask==1.2.0

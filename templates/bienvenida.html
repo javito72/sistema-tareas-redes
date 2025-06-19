@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Tareas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .welcome-message {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        
+        .user-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .user-info h2 {
+            color: #495057;
+            margin-top: 0;
+        }
+        
+        .tasks-section {
+            margin-top: 30px;
+        }
+        
+        .task-item {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .task-description {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .task-completed {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+        
+        .no-tasks {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            padding: 40px;
+        }
+        
+        .api-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .api-info h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        
+        .endpoint {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Sistema de Gestión de Tareas</h1>
+        
+        <div class="welcome-message">
+            ¡Bienvenido al sistema de gestión de tareas! Esta API REST te permite registrar usuarios, 
+            iniciar sesión y gestionar tareas de forma segura.
+        </div>
+        
+        {% if usuario %}
+        <div class="user-info">
+            <h2>👋 ¡Hola, {{ usuario }}!</h2>
+            <p>Has iniciado sesión correctamente. Aquí tienes un resumen de tus tareas:</p>
+        </div>
+        
+        <div class="tasks-section">
+            <h3>📋 Tus Tareas</h3>
+            {% if tareas %}
+                {% for tarea in tareas %}
+                <div class="task-item {% if tarea.completada %}task-completed{% endif %}">
+                    <div class="task-title">
+                        {{ tarea.titulo }}
+                        {% if tarea.completada %}✅{% endif %}
+                    </div>
+                    {% if tarea.descripcion %}
+                    <div class="task-description">{{ tarea.descripcion }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-tasks">
+                    No tienes tareas registradas aún. ¡Comienza a crear algunas!
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        <div class="api-info">
+            <h3>📡 Endpoints Disponibles</h3>
+            <p><strong>Registro de Usuario:</strong></p>
+            <div class="endpoint">POST /registro</div>
+            <p>Datos: {"usuario": "nombre", "contraseña": "1234"}</p>
+            
+            <p><strong>Inicio de Sesión:</strong></p>
+            <div class="endpoint">POST /login</div>
+            <p>Datos: {"usuario": "nombre", "contraseña": "1234"}</p>
+            
+            <p><strong>Ver Tareas:</strong></p>
+            <div class="endpoint">GET /tareas</div>
+            <p>Muestra esta página de bienvenida</p>
+        </div>
+        
+        <div class="footer">
+            <p>Sistema desarrollado con Flask, SQLite y mucho ❤️</p>
+            <p>Usa Postman para probar los endpoints de la API</p>
+        </div>
+    </div>
+</body>
+</html>
