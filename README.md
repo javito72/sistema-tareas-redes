@@ -276,9 +276,6 @@ app.run(debug=True, host='0.0.0.0', port=5001)
 - Verificar que hayas iniciado sesión primero con POST /login
 - Las sesiones se mantienen durante la ejecución del servidor
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ## 👨‍💻 Autor
 
