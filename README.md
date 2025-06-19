@@ -1,6 +1,6 @@
 # 🚀 Sistema de Gestión de Tareas - API REST
 
-Un sistema completo de gestión de tareas con API REST, autenticación segura y base de datos SQLite.
+Un sistema de gestión de tareas con API REST, autenticación segura y base de datos SQLite.
 
 ## 📋 Características
 
@@ -279,7 +279,7 @@ app.run(debug=True, host='0.0.0.0', port=5001)
 
 ## 👨‍💻 Autor
 
-Práctica Formativa Obligatoria 2 (PFO2) desarrollada por Christian javier Lemos para la materia Programación sobre redes.
+Práctica Formativa Obligatoria 2 (PFO2) desarrollada por Christian Javier Lemos para la materia Programación sobre redes.
 
 ---
 
