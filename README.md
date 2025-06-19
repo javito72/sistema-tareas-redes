@@ -29,7 +29,7 @@ sistema-tareas/
 ├── models.py             # Modelos de datos
 ├── templates/            # Templates HTML
 │   └── bienvenida.html   # Página de bienvenida
-├── screenshots/             # Capturas de pantalla de pruebas con Postman
+├── screenshots/          # Capturas de pantalla de pruebas con Postman
 │   ├── login_test.png
 │   └── registro_test.png
 ├── requirements.txt      # Dependencias
